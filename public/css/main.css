@@ -1,0 +1,33 @@
+body {
+
+
+}
+
+.chatPanel{
+	min-height: 500px;
+	max-height: 500px;
+
+	overflow-y:scroll;
+}
+
+
+#messages{
+	list-style-type: none;
+}
+
+#messages li { 
+	padding: 5px 10px; 
+}
+
+#messages li:nth-child(odd) { 
+	background: #C5E2FF; 
+
+}
+
+.ng-valid.ng-dirty{
+	border-color: #66FF66;
+}
+
+.ng-invalid.ng-dirty{
+	border-color: #FF6666;
+}

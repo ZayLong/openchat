@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>openchat</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css 
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css 
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+        <link rel="stylesheet" href="/css/main.css"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    </head>
+    <body ng-app="chat">
+        <div class="container"  ng-controller="chatController as chatCtrl">
+            <div class="row">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Open Chat Room</h3>
+                    </div>
+                    <div class="panel-body chatPanel">
+                        <ul id="messages"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form name="chatForm"class="form-inline" role="form" novalidate>
+
+                      <div class="form-group" ng-hide="connected">
+                        <label for="usernameInput">User Name</label>
+                        <input type="text" class="form-control" id="username" placeholder="Who are you?" ng-model="username" ng-minlength="3" ng-minlength="14" required>
+                        <button  class="btn btn-info" ng-click="connect()">Connect</button>
+                      </div>
+
+                      <div class="form-group" ng-show="connected">
+                        <label for="messageInput">Message</label>
+                        <input type="text" class="form-control" id="m" placeholder="Say what you want!" ng-model="message" ng-minlength="1" ng-minlength="140">
+                        <div id="trueCheck" ng-show="false">{{chatForm.$valid}}</div>
+                        <button type="submit" class="btn btn-info">Send</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!--build:socket.io, angular.js, bootstrap, jquery.js -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+       <!-- <script src="/js/client.js"></script> -->
+        <script src="/js/main_module.js"></script>
+        <!--endbuild -->
+    </body>
+</html>
