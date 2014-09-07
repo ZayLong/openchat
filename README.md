@@ -6,12 +6,11 @@ a web chat app using Angular, Node and Socket.io
 
 v 0.0.1 Feature checklist
 ===============================
--user defined usernames
+- user defined usernames
 
--chat notifies when unique visitor enters or leaves the room
+- chat notifies when unique visitor enters or leaves the room
 
--Form validation(minimum username and chat message requirements)
-
+- Form validation(minimum username and chat message requirements)
 
 
 
